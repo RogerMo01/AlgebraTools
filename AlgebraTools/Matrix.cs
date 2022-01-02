@@ -24,7 +24,7 @@ namespace AlgebraTools
             Elements[row, column] = value;
         }
 
-        public Matrix AddMatrices(Matrix matrixA, Matrix matrixB)
+        public static Matrix AddMatrices(Matrix matrixA, Matrix matrixB)
         {
             HandleException(matrixA.Rows != matrixB.Rows || matrixA.Columns != matrixB.Columns, "Matrices cannot be added");
 
@@ -32,7 +32,7 @@ namespace AlgebraTools
 
             for (int i = 0; i < result.Rows; i++)
             {
-                for (int j = 0; j < Columns; j++)
+                for (int j = 0; j < result.Columns; j++)
                 {
                     result.Elements[i, j] = matrixA.Elements[i, j] + matrixB.Elements[i, j];
                 }
@@ -41,7 +41,7 @@ namespace AlgebraTools
             return result;
         }
 
-        public Matrix MultiplyMatrices(Matrix matrixA, Matrix matrixB)
+        public static Matrix MultiplyMatrices(Matrix matrixA, Matrix matrixB)
         {
             HandleException(matrixA.Rows != matrixB.Columns, "Matrices cannot be added");
 
