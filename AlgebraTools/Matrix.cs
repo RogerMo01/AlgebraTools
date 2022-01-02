@@ -162,6 +162,23 @@ namespace AlgebraTools
             return (matrixA.Elements.GetLength(0) == matrixB.Elements.GetLength(0) && matrixA.Elements.GetLength(1) == matrixB.Elements.GetLength(1));
         }
 
+              #region Operators
+        public static Matrix operator +(Matrix matrix1, Matrix matrix2)
+        {
+            return AddMatrices(matrix1, matrix2);
+        }
+
+        public static Matrix operator -(Matrix matrix1, Matrix matrix2)
+        {
+            return AddMatrices(matrix1, ScalarMultiply(matrix2, -1));
+        }
+
+        public static Matrix operator *(Matrix matrix1, Matrix matrix2)
+        {
+            return MultiplyMatrices(matrix1, matrix2);
+        }
+        #endregion
+
         public int this[int i, int j]
         {
             get { return this.GetElementAt(i, j); }
