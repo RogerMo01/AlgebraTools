@@ -182,7 +182,6 @@ namespace AlgebraTools
         public int this[int i, int j]
         {
             get { return this.GetElementAt(i, j); }
-
             set { SetElementAt(value, i, j); }
         }
     }
