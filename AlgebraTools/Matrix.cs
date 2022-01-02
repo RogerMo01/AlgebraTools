@@ -41,6 +41,21 @@ namespace AlgebraTools
             return result;
         }
 
+        public static Matrix ScalarMultiply(Matrix matrix, int scalar)
+        {
+            Matrix result = new Matrix(matrix.Rows, matrix.Columns);
+
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    result[i, j] = matrix[i, j] * scalar;
+                }
+            }
+
+            return result;
+        }
+
         public static Matrix MultiplyMatrices(Matrix matrixA, Matrix matrixB)
         {
             HandleException(matrixA.Rows != matrixB.Columns, "Matrices cannot be added");
