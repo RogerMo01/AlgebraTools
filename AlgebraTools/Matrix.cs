@@ -146,5 +146,12 @@ namespace AlgebraTools
         {
             return (matrixA.Elements.GetLength(0) == matrixB.Elements.GetLength(0) && matrixA.Elements.GetLength(1) == matrixB.Elements.GetLength(1));
         }
+
+        public int this[int i, int j]
+        {
+            get { return this.GetElementAt(i, j); }
+
+            set { SetElementAt(value, i, j); }
+        }
     }
 }
